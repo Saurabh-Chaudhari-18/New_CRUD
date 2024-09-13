@@ -11,10 +11,10 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // Routes
-app.use('/api/blog', blogRoutes);
+app.use('/api/message', blogRoutes);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
